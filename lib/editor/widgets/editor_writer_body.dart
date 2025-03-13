@@ -12,10 +12,9 @@ import 'package:path/path.dart' as path;
 import 'package:itio_editor/editor/utils/color_utils.dart';
 
 import '../cubit/text_editor_cubit.dart';
+import '../my_quill/my_quill_editor.dart';
+import '../my_quill/my_quill_toolbar.dart';
 import '../utils/app_copy.dart';
-
-import 'my_quill_editor.dart';
-import 'my_quill_toolbar.dart';
 
 class EditorWriterBody extends StatefulWidget {
   const EditorWriterBody({super.key});
@@ -58,13 +57,13 @@ class _EditorWriterBodyState extends State<EditorWriterBody> with AppCopy {
               return MyQuillEditor(
                 controller: _controller,
                 configurations: QuillEditorConfigurations(
-                  characterShortcutEvents: standardCharactersShortcutEvents,
-                  spaceShortcutEvents: standardSpaceShorcutEvents,
-                  searchConfigurations: const QuillSearchConfigurations(
-                    searchEmbedMode: SearchEmbedMode.plainText,
-                  ),
-                  sharedConfigurations: _sharedConfigurations,
-                ),
+                    // characterShortcutEvents: standardCharactersShortcutEvents,
+                    // spaceShortcutEvents: standardSpaceShorcutEvents,
+                    // searchConfigurations: const QuillSearchConfigurations(
+                    //   searchEmbedMode: SearchEmbedMode.plainText,
+                    // ),
+                    // sharedConfigurations: _sharedConfigurations,
+                    ),
                 scrollController: _editorScrollController,
                 focusNode: _editorFocusNode,
               );

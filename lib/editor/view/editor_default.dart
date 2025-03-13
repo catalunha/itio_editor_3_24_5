@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../widgets/editor_viewer_body.dart';
 import '../widgets/editor_writer_body.dart';
-import '../widgets/gif_viewer.dart';
 
 class EditorDefault extends StatelessWidget {
   const EditorDefault({super.key});
@@ -10,7 +9,7 @@ class EditorDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       // initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
@@ -21,7 +20,6 @@ class EditorDefault extends StatelessWidget {
               tabs: [
                 Text('Editor'),
                 Text('Viewer'),
-                Text('Gif'),
               ],
             ),
             Flexible(
@@ -29,7 +27,6 @@ class EditorDefault extends StatelessWidget {
                 children: [
                   EditorWriterBody(),
                   EditorViewerBody(),
-                  GifViewer(),
                 ],
               ),
             ),

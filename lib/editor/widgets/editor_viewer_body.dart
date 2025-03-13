@@ -9,8 +9,7 @@ import 'package:flutter_quill_extensions/flutter_quill_extensions.dart';
 import 'package:itio_editor/editor/widgets/editor_writer_body.dart';
 
 import '../cubit/text_editor_cubit.dart';
-
-import 'my_quill_editor.dart';
+import '../my_quill/my_quill_editor.dart';
 
 class EditorViewerBody extends StatefulWidget {
   const EditorViewerBody({super.key});
@@ -50,13 +49,13 @@ class _EditorViewerBodyState extends State<EditorViewerBody> {
             child: MyQuillEditor(
               controller: _controller,
               configurations: QuillEditorConfigurations(
-                characterShortcutEvents: standardCharactersShortcutEvents,
-                spaceShortcutEvents: standardSpaceShorcutEvents,
-                searchConfigurations: const QuillSearchConfigurations(
-                  searchEmbedMode: SearchEmbedMode.plainText,
-                ),
-                sharedConfigurations: _sharedConfigurations,
-              ),
+                  // characterShortcutEvents: standardCharactersShortcutEvents,
+                  // spaceShortcutEvents: standardSpaceShorcutEvents,
+                  // searchConfigurations: const QuillSearchConfigurations(
+                  //   searchEmbedMode: SearchEmbedMode.plainText,
+                  // ),
+                  // sharedConfigurations: _sharedConfigurations,
+                  ),
               scrollController: _editorScrollController,
               focusNode: _editorFocusNode,
             ),

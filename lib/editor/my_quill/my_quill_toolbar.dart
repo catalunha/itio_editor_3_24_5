@@ -174,6 +174,16 @@ class MyQuillToolbar extends StatelessWidget with AppCopy {
                   const VerticalDivider(),
                   QuillToolbarSelectHeaderStyleDropdownButton(
                     controller: controller,
+                    options: QuillToolbarSelectHeaderStyleDropdownButtonOptions(
+                        attributes: [
+                          Attribute.h1,
+                          Attribute.h2,
+                          Attribute.h3,
+                          Attribute.h4,
+                          Attribute.h5,
+                          Attribute.h6,
+                          Attribute.header,
+                        ]),
                   ),
                   const VerticalDivider(),
                   QuillToolbarSelectLineHeightStyleDropdownButton(
@@ -230,7 +240,7 @@ class MyQuillToolbar extends StatelessWidget with AppCopy {
             showListCheck: false,
             showSearchButton: false,
             showLink: false,
-            showHeaderStyle: false,
+            // showHeaderStyle: false,
             multiRowsDisplay: true,
             fontFamilyValues: {
               // 'Amatic': GoogleFonts.amaticSc().fontFamily!,
@@ -249,6 +259,18 @@ class MyQuillToolbar extends StatelessWidget with AppCopy {
               '20': '20.0',
             },
             searchButtonType: SearchButtonType.modern,
+            buttonOptions: QuillSimpleToolbarButtonOptions(
+                selectHeaderStyleDropdownButton:
+                    QuillToolbarSelectHeaderStyleDropdownButtonOptions(
+                        attributes: [
+                  Attribute.h1,
+                  Attribute.h2,
+                  Attribute.h3,
+                  Attribute.h4,
+                  Attribute.h5,
+                  Attribute.h6,
+                  Attribute.header,
+                ])),
             customButtons: [
               QuillToolbarCustomButtonOptions(
                 icon: const Icon(Icons.data_object),
@@ -333,6 +355,14 @@ class MyQuillToolbar extends StatelessWidget with AppCopy {
               //             ?.toHex()));
               //   },
               // ),
+              QuillToolbarCustomButtonOptions(
+                icon: Icon(
+                  Icons.stacked_bar_chart,
+                ),
+                onPressed: () => context
+                    .read<TextEditorCubit>()
+                    .updateSettings(useCustomQuillToolbar: true),
+              ),
             ],
             embedButtons: FlutterQuillEmbeds.toolbarButtons(
               imageButtonOptions: QuillToolbarImageButtonOptions(
